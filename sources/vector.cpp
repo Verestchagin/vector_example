@@ -104,7 +104,8 @@ void vector_t::pop_back()
     	elements_ = new int[capacity_];
     	for (std::size_t i = 0; i < size_; i++)
       		elements_[i] = elements_new[i]
-    delete[]elements_new;
+    	delete[] elements_new;
+    }
 }
 
 int & vector_t::operator [](std::size_t index)
