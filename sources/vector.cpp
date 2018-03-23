@@ -23,10 +23,10 @@ vector_t & vector_t::operator =(vector_t const & other)
 {
 	if (this != &other){
 		if (elements_ != nullptr)
-			delete[]elements_;
-		size_ = other.size_;
-		capacity_ = other.capacity_;
-		elements_ = new int[capacity_];
+			delete[] elements_;
+		this->size_ = other.size_;
+		this->capacity_ = other.capacity_;
+		this->elements_ = new int[capacity_];
 		for (unsigned int i = 0; i < size_; i++)
 			elements_[i] = other.elements_[i];
 	}
@@ -50,7 +50,7 @@ bool vector_t::operator ==(vector_t const & other) const
 vector_t::~vector_t()
 {
 	if (elements_ != nullptr){
-		delete[]elements_;
+		delete[] elements_;
 		size_ = 0;
 		capacity_ = 0;
 	}
@@ -81,7 +81,7 @@ void vector_t::push_back(int value)
     	int*  elements_new = new int [capacity_];
     	for (std::size_t i = 0; i < size_; i++)
       		 elements_new[i] = elements_[i];
-    	delete[]elements_;
+    	delete[] elements_;
     	elements_ =  elements_new;
     	elements_[size_] = value;
     	size_++;
