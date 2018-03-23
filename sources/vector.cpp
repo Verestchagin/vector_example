@@ -99,11 +99,11 @@ void vector_t::pop_back()
     	int* elements_new = new int[size_];
     	for (std::size_t i = 0; i < size_; i++)
       		elements_new[i] = elements_[i];
-    	delete[]elements_;
+    	delete[] elements_;
     	capacity_ = capacity_ / 2;
     	elements_ = new int[capacity_];
     	for (std::size_t i = 0; i < size_; i++)
-      		elements_[i] = elements_new[i]
+      		elements_[i] = elements_new[i];
     	delete[] elements_new;
     }
 }
