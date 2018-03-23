@@ -90,7 +90,7 @@ void vector_t::pop_back()
 {
 	if(elements_)
 	{
-		if( capacity_/4 == size_+1){
+		if( capacity_/4 == size_-1){
 			capacity_ /= 2;
 			int *elements_new = new int[capacity_];
 			for(unsigned int i = 0; i < size_-1; i++)
